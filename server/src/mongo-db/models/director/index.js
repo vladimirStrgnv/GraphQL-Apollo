@@ -1,8 +1,10 @@
 const { model, Schema} = require('mongoose');
 
 const directorSchema = new Schema({
-    id: Number,
-    name: String
+    name: String,
+    age: Number,
+    id: String
+
 });
 
-module.exports = model('Director', filmSchema);
+module.exports = model('Director', directorSchema);

@@ -13,7 +13,11 @@ app.use('/graphql', graphqlHTTP({
 }));
 
 app.listen(PORT, async (err) => {
-  err ? console.log(err) : console.log('Server started!');
-  await mongoose.connect('mongodb://127.0.0.1:27017/graphql')
-    .then(() => console.log('Connected!'));
+  try {
+    console.log('Server started!');
+    await mongoose.connect('mongodb+srv://nicestrogonov:MjQPyI4I0GZ1gllT@cluster0.slrgslq.mongodb.net/graph');
+    console.log('Connected!');
+  } catch (err) {
+    console.log(err);
+  }
 });
