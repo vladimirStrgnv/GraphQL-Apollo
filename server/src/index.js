@@ -2,8 +2,10 @@ const express = require('express');
 const schema = require('./schema');
 const {graphqlHTTP} = require('express-graphql')
 const mongoose = require('mongoose');
+var cors = require('cors')
 
 const app = express();
+app.use(cors());
 const PORT = 3005;
 
 

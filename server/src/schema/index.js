@@ -64,6 +64,7 @@ const Mutation = new GraphQLObjectType({
           directorId : args.directorId,
           name: args.name,
           genre: args.genre,
+          id: uuidv4()
         });
         return movie.save();
       }
@@ -139,8 +140,8 @@ const Query = new GraphQLObjectType({
     },
     movies: {
       type: new GraphQLList(MovieType),
-      args: { id: { type: GraphQLID } },
       resolve(parent, args) {
+        const movies = Movie.find({});
         return Movie.find({})
       },
     }
